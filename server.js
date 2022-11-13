@@ -4,7 +4,7 @@ const app = express()
 const mongoose = require("mongoose")
 require('dotenv').config({path:'.env'}) /*things to keep secret, make sure it is able to use those variables*/
 const TodoTask =require('./models/todotask')
-const PORT = 8500
+const PORT = process.env.PORT||8500
 
 //middleware, use server.js to render ejs
 app.set('view engine', 'ejs')  
@@ -21,7 +21,7 @@ app.get('/', async(request,response) => {
     try {
         TodoTask.find({}, (err, tasks)=> { //await
             response.render('index.ejs', {
-                todoTasks:tasks //todoTasks doesn't have to match database name, not key value pairs, just the object we're passing back to ejs that ejs can reference
+                todoTasks:tasks
             })
         })
     }
@@ -35,15 +35,16 @@ app.post('/', async(request,response)=>{
     const todoTask=new TodoTask(
         {
             title:request.body.title,
-            content: request.body.content
+            content: request.body.content,
+            imageURL:request.body.imageURL 
         }
                                  )
     try {
         await todoTask.save()
         console.log(todoTask)
         response.redirect("/")
-         }
-         
+         }         
+
     catch(err){
         if (err) return response.status(500).send(err)
         response.redirect('/')

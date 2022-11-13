@@ -2,46 +2,68 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+        
 }
 
 body {
-    background: repeating-linear-gradient( 90deg,     #fdeae6,     #fdeae6 20px, rgb(255, 255, 255) 20px, rgb(255, 255, 255) 40px); 
-    height: 200px; 
-    width: 200px;   
+    background: repeating-linear-gradient( 90deg,     #f7afa0,     #f7afa0 20px, rgb(248, 208, 208) 20px, rgb(248, 208, 208) 40px); 
     font-family: 'Edu TAS Beginner', sans-serif;
+    border: 2px solid green;
+   
+  
+  
 }
 
+
+.rightImage {
+    position: fixed;
+    max-width: 15%;
+   right: 5%;
+   top:5%;
+}
+
+.leftImage {
+    position:fixed;
+    max-width: 30%;
+}
 .todo-container {
     color: white;
     position: absolute;
-    top: 50%;
+    top: 10%;
     left: 50%;
     padding: 20px;
-    width: 600px;
-    transform: translate(-50%, -50%);
-    background: #091E05;
+    transform: translate(-50%, 0%);
+    background: #d1e9f5; /* FIX LATER */
+    background-image: url("https://images.assetsdelivery.com/compings_v2/olgagriga/olgagriga2006/olgagriga200600067.jpg");
+    background-size: repeat;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 
 .todo {
-    width: 400px;
-}
+    width: 85%;
+    
+   }
 
 h2 {
     padding: 10px;
     font-size: 2rem;
+    background: #a17b80;
+    
 }
+
 
 input {
     margin-bottom: 2px;
     width: 100%;
     padding: 5px;
     border-radius: 5px;
-    height: 20px;
+    height: 25px;
     font-family: 'Edu TAS Beginner', sans-serif;
+    font-size: 1.2rem;
 }
 
 textarea {
@@ -50,6 +72,7 @@ textarea {
     width: 100%;
     border-radius: 5px;
     font-family: 'Edu TAS Beginner', sans-serif;
+    font-size: 1.2rem;
 }
 
 .todo-header button {
@@ -59,7 +82,7 @@ textarea {
     cursor: pointer;
     margin: 5px;
     padding: 5px;
-    background-color: #fdeae6;
+    background-color: #a17b80;
     font-family: 'Edu TAS Beginner', sans-serif;
 }
 
@@ -69,18 +92,25 @@ ul {
 
 .todo-list-item {
     padding: 10px;
+    font-size: 1.4rem;
     margin-top: 10px;
     border: none;
     border-radius: 5px;
-    background: rgba(0, 0, 0, 0.3);
+    background: #a17b80;
     display: flex;
     flex-direction: row;
+    
+}
+.todo-list-item-title {
+    font-weight: 800;
+    background-color: rgba(0,0,0,.3)
+
 }
 
 .todo-list-item-content {
-    font-size: .8rem;
     margin-left: 10px;
     margin-right: 10px;
+   
 }
 
 .todo-list-item form {
@@ -105,7 +135,7 @@ ul {
     padding: 5px;
     background-color: rgb(51, 212, 100);
     margin-left: 5px;
-    max-height: 30px;
+  
     font-family: 'Edu TAS Beginner', sans-serif;
     display: block;
 }
@@ -140,4 +170,9 @@ ul {
     margin-right: 5px;
     cursor: pointer;
     text-decoration: none;
+}
+
+.url-images {
+    max-width: 70%;
+    max-height: 20%;
 }

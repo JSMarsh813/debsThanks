@@ -44,14 +44,12 @@
                     
                 </form>
 
-                <section class="todo-list"> <!----creating an unordered list-->
-                  <!-----want list to be dynamic, become bigger or smaller depending on how many items are in the database, essentially add or delete list items automatically-->
+                <section class="todo-list"> <!----creating an unordered list-->                 
 
-                  <!---for reach loop that will reach through each of the tasks that we ware sending back -->
-                    <% todoTasks.forEach(task=> {%> <!---enclosing something. referencing the object on line 24 of server.js. this forEach is looping through each of the tasks in the todotasks object which has a tasks array (foreachonly works on arrays) (its back from the database so its not a collection anymore its an object)-->
-                        <section class="todo-list-item"> <!----want to display each task as a list item-->
-                             <div class="todo-list-item-title"> <!---i want to have a title-->
-                                <%= task.title %> <!---ejs to help render the title, actually displaying something inside the div-->
+                            <% todoTasks.forEach(task=> {%> 
+                        <section class="todo-list-item"> 
+                             <div class="todo-list-item-title"> 
+                                <%= task.title %> 
                              </div>   
 
                              <div class="todo-list-item-content">  <!---i want to have content-->
@@ -69,11 +67,11 @@
                               id is an an object, _id is a string------>
 
 
-                             <!----add a button to allow deletion-->
+                             <!----add a button to allow deletion
 
                              <a href="/remove/<%=task._id %>" class="remove"> 
                               <span class="fas fa-bomb"> </span>
-                             </a>
+                             </a>  -->
                         </section>
 
                      </div>
